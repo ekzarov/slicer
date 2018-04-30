@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class RearWheelDrive : MonoBehaviour
 {
@@ -10,33 +10,36 @@ public class RearWheelDrive : MonoBehaviour
     public Transform MeshL1, MeshR1, MeshL2, MeshR2;
     public WheelCollider L1, R1, L2, R2;
 
-    // private WheelCollider[] wheels;
-
     public float maxAngle = 30;
     public float maxTorque = 300;
-    // public GameObject wheelShape;
 
-    // here we find all the WheelColliders down in the hierarchy
+
+    #region AI
+
+    public Transform pathGroup;
+    public WheelCollider wheelFL, wheelFR;
+
+    private List<Transform> path;
+    private float maxSteer = 15.0f;
+    private int currentPathObj;
+
+    #endregion
+
     public void Start()
     {
-        // wheels = GetComponentsInChildren<WheelCollider>();
+        BuildPath();
+    }
 
-        //for (int i = 0; i < wheels.Length; ++i)
-        //{
-        //    var wheel = wheels[i];
+    private void BuildPath()
+    {
+        var pathObjs = pathGroup.GetComponentInChildren<Transform>();
+        path = new List<Transform>();
 
-        // create wheel shapes only when needed
-        // if (wheelShape != null)
-        // {
-        //var ws = GameObject.Instantiate(wheelShape);
-        //ws.transform.parent = wheel.transform;
-
-        //if (wheel.transform.localPosition.x < 0f)
-        //{
-        //    ws.transform.localScale = new Vector3(ws.transform.localScale.x * -1, ws.transform.localScale.y, ws.transform.localScale.z);
-        //}
-        // }
-        //}
+        foreach (Transform pathObj in pathObjs)
+        {
+            if (pathObj != transform)
+                path.Add(pathObj);
+        }
     }
 
     // this is a really simple approach to updating wheels
@@ -72,64 +75,22 @@ public class RearWheelDrive : MonoBehaviour
     {
         if (swipeControl.SwipeLeft)
         {
-            angle = 15;
+            //angle = 15;
         }
         else if (swipeControl.SwipeRight)
         {
-            angle = -15;
+            //angle = -15;
         }
-
-        // a simple car where front wheels steer while rear ones drive
-        if (wheel.transform.localPosition.z > 0 || swipeControl.SwipeLeft || swipeControl.SwipeRight)
+        else if (wheel.transform.localPosition.z > 0)
         {
-            wheel.steerAngle = angle;
+            //wheel.steerAngle = angle;
         }
 
-        //if (wheel.transform.localPosition.z < 0)
-        //{
-        // wheel.motorTorque = torque;
         if (doWheel)
         {
-            wheel.motorTorque = staticSpeedMotorTorque;
+            // wheel.motorTorque = staticSpeedMotorTorque;
         }
-        // }
-
-        // update visual wheels if any
-        //Quaternion q;
-        //Vector3 p;
-        //wheel.GetWorldPose(out p, out q);
-
-        //// assume that the only child of the wheelcollider is the wheel shape
-        //Transform shapeTransform = wheel.transform.GetChild(0);
-        //shapeTransform.position = p;
-        //shapeTransform.rotation = q;
 
         RotateMesh(wheel, mesh);
-
-
-        // Skids
-
-        // gameManager.Skid();
-
-        //WheelHit wheelHitInfo;
-        //if (wheel.GetGroundHit(out wheelHitInfo))
-        //{
-        //    // Check sideways speed
-        //    // Gives velocity with +Z being our forward axis
-
-        //    Vector3 localVelocity = transform.InverseTransformDirection(rigidbody.velocity);
-        //    float skidSpeed = Mathf.Abs(localVelocity.x);
-        //    if (skidSpeed >= SKID_FX_SPEED)
-        //    {
-        //        // MAX_SKID_INTENSITY as a constant, m/s where skids are at full intensity
-        //        float intensity = Mathf.Clamp01(skidSpeed / MAX_SKID_INTENSITY);
-        //        Vector3 skidPoint = wheelHitInfo.point + (rigidbody.velocity * Time.fixedDeltaTime);
-        //        lastSkid = Skidmarks.AddSkidMark(skidPoint, wheelHitInfo.normal, intensity, lastSkid);
-        //    }
-        //    else
-        //    {
-        //        lastSkid = -1;
-        //    }
-        //}
     }
 }

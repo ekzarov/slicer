@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EasySuspension\EasySuspension\Assets\Editor\BoxyCarWizard.cs" />
+     <Compile Include="Assets\Suburban road\Drive\Scripts\Editor\GraphOverlayEditor.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Dev/Games/slicer/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
@@ -156,8 +157,12 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8D1557FC-72C9-E77A-984B-C85D0F8A4521}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{AD46BFDF-0E12-8A9A-F629-96BC7ABFFF3D}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{FAADBD8B-CBD9-C939-424D-98078040564D}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,6 +54,7 @@
      <Compile Include="Assets\EasySuspension\EasySuspension\Assets\EasySuspension.cs" />
      <Compile Include="Assets\EasySuspension\EasySuspension\Assets\RearWheelDrive.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\Scripts\AICar.cs" />
      <Compile Include="Assets\Scripts\AnalogueSpeedConverter.cs" />
      <Compile Include="Assets\Scripts\CenterOfMass.cs" />
      <Compile Include="Assets\Scripts\Effects\Test.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\HitObstacle.cs" />
      <Compile Include="Assets\Scripts\Instantiation.cs" />
      <Compile Include="Assets\Scripts\KillMe.cs" />
+     <Compile Include="Assets\Scripts\PathScript.cs" />
      <Compile Include="Assets\Scripts\PivotGizmo.cs" />
      <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -72,6 +74,10 @@
      <Compile Include="Assets\Scripts\SpeedManager.cs" />
      <Compile Include="Assets\Scripts\Swipe.cs" />
      <Compile Include="Assets\StopForceOnCollision.cs" />
+     <Compile Include="Assets\Suburban road\Drive\Scripts\CarSwitcher.cs" />
+     <Compile Include="Assets\Suburban road\Drive\Scripts\DriftCamera.cs" />
+     <Compile Include="Assets\Suburban road\Drive\Scripts\GraphOverlay.cs" />
+     <Compile Include="Assets\Suburban road\Drive\Scripts\WheelDrive.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -80,14 +86,27 @@
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
+     <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\BrakeLight.cs" />
+     <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\CarAIControl.cs" />
+     <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\CarAudio.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\CarController.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\CarSelfRighting.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\Mudguard.cs" />
+     <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
+     <Compile Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\UnitySkidmarks\Skidmarks.cs" />
      <Compile Include="Assets\UnitySkidmarks\Assets\UnitySkidmarks\WheelSkid.cs" />
+     <None Include="Assets\Fancy_Animated_Coins\Prefabs\Animated_Single_Coins\Gold\Perspective\Horizontal_Spin\Slow\Shine.shader" />
      <None Include="Assets\EasySuspension\EasySuspension\ProjectSettings\ProjectVersion.txt" />
+     <None Include="Assets\Fancy_Animated_Coins\Prefabs\Animated_Single_Coins\Color_Me_Coins\Read_Me_ASC_Color_Me_Coins.txt" />
+     <None Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+     <None Include="Assets\Fancy_Animated_Coins\Prefabs\Readme.txt" />
+     <None Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+     <None Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
+     <None Include="Assets\Fancy_Animated_Coins\Prefabs\Particle_Coin_Showers\Color_Me_Coins\Read_Me_Color_Me_Coins.txt" />
+     <None Include="Assets\Fancy_Animated_Coins\Read_Me.txt" />
      <None Include="Assets\Fonts\Roboto\LICENSE.txt" />
      <None Include="Assets\UnitySkidmarks\Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
      <None Include="Assets\UnitySkidmarks\Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
@@ -134,6 +153,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8D1557FC-72C9-E77A-984B-C85D0F8A4521}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 namespace UnityStandardAssets.Cameras
 {
@@ -22,6 +23,7 @@ namespace UnityStandardAssets.Cameras
 
         private float m_LookAngle;                    // The rig's y axis rotation.
         private float m_TiltAngle;                    // The pivot's x axis rotation.
+        private const float k_LookDistance = 100f;    // How far in front of the pivot the character's look target is.
 		private Vector3 m_PivotEulers;
 		private Quaternion m_PivotTargetRot;
 		private Quaternion m_TransformTargetRot;
@@ -71,8 +73,8 @@ namespace UnityStandardAssets.Cameras
 			return;
 
             // Read the user input
-            var x = Input.GetAxis("Mouse X");
-            var y = Input.GetAxis("Mouse Y");
+            var x = CrossPlatformInputManager.GetAxis("Mouse X");
+            var y = CrossPlatformInputManager.GetAxis("Mouse Y");
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_LookAngle += x*m_TurnSpeed;
