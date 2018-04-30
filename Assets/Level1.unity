@@ -499,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 104242732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: -19.4, z: 853.7}
+  m_LocalPosition: {x: -0.6, y: 0, z: 845.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -921,7 +921,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 294413985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -100.9, y: 0, z: 1020.9}
+  m_LocalPosition: {x: -64.9, y: 0, z: 976.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -1242,7 +1242,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483206299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -132.3, y: 0, z: 1073.9}
+  m_LocalPosition: {x: -85.8, y: 0, z: 999.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -1278,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &506418154
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1410,7 +1410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &584728082
 Transform:
   m_ObjectHideFlags: 0
@@ -2946,7 +2946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1134303236
 Transform:
   m_ObjectHideFlags: 0
@@ -3263,7 +3263,6 @@ GameObject:
   - component: {fileID: 1163679372}
   - component: {fileID: 1163679371}
   - component: {fileID: 1163679375}
-  - component: {fileID: 1163679376}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -3321,9 +3320,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.3
   m_BrakeTorque: 20000
-  pathGroup: {fileID: 1134303236}
-  distFormPath: 100
-  enablePath: 0
+  pathGroup: {fileID: 2095079075}
+  distFormPath: 20
+  enablePath: 1
 --- !u!54 &1163679373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3369,17 +3368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1163679374}
---- !u!114 &1163679376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1163679370}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 695c64c803b3d1d4c94f21ba11a43fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1240828172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3662,7 +3650,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304988162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.5, y: 0, z: 935}
+  m_LocalPosition: {x: -20.2, y: 0, z: 906.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -5351,7 +5339,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1664106714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -156, y: 0, z: 1290.2}
+  m_LocalPosition: {x: -147.3, y: 0, z: 1112.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -6129,7 +6117,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1938385304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -153.5, y: 0, z: 1143}
+  m_LocalPosition: {x: -129.9, y: 0, z: 1070.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
@@ -6491,7 +6479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2095079075
 Transform:
   m_ObjectHideFlags: 0
@@ -6562,7 +6550,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2107284834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -144.8, y: 0, z: 1104.6}
+  m_LocalPosition: {x: -110.6, y: 0, z: 1032.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095079075}
